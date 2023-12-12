@@ -1,0 +1,63 @@
+{
+    "packages": [
+        {
+            "name": "wp-performance/presswind-assets",
+            "version": "dev-main",
+            "version_normalized": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WP-Performance/presswind-assets.git",
+                "reference": "d65654ec77a047fa008cec5535e74387817ea2ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WP-Performance/presswind-assets/zipball/d65654ec77a047fa008cec5535e74387817ea2ef",
+                "reference": "d65654ec77a047fa008cec5535e74387817ea2ef",
+                "shasum": ""
+            },
+            "require": {
+                "ext-filter": "*",
+                "php": "~8.1.0 || ~8.2.0"
+            },
+            "require-dev": {
+                "pestphp/pest": "^2.24"
+            },
+            "time": "2023-12-04T14:00:20+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "PressWind\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "faramazpat",
+                    "email": "infos@goodmotion.fr",
+                    "homepage": "https://goodmotion.fr"
+                }
+            ],
+            "description": "Assets helpers for use Vite JS in WordPress",
+            "homepage": "https://wp-performance.com",
+            "keywords": [
+                "vite js",
+                "wordpress",
+                "wordpress plugin",
+                "wordpress theme",
+                "wordpress vite"
+            ],
+            "support": {
+                "issues": "https://github.com/WP-Performance/presswind-assets/issues",
+                "source": "https://github.com/WP-Performance/presswind-assets/tree/main"
+            },
+            "install-path": "../wp-performance/presswind-assets"
+        }
+    ],
+    "dev": false,
+    "dev-package-names": []
+}

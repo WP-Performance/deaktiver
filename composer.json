@@ -7,10 +7,7 @@
         "Deaktiver\\": "src/"
         }
     },
-  "require-dev": {
-    "coenjacobs/mozart": "^0.7.1",
-    "laravel/pint": "^1.13"
-  },
+  "require-dev": {},
   "extra": {
     "mozart": {
       "dep_namespace": "Deaktiver\\Dependencies\\",
@@ -27,11 +24,11 @@
   },
   "scripts": {
   "post-install-cmd": [
-    "\"vendor/bin/mozart\" compose",
+    "mozart compose",
     "composer dump-autoload"
   ],
   "post-update-cmd": [
-    "\"vendor/bin/mozart\" compose",
+    "mozart compose",
     "composer dump-autoload"
   ]
 }
