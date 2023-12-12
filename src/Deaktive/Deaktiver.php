@@ -31,6 +31,9 @@ class Deaktiver
     public static function init(): void
     {
         $config = OptionsServices::class::get('config');
+        if (! $config) {
+            return;
+        }
 
         foreach ($config as $key => $value) {
 

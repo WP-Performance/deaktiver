@@ -25,7 +25,7 @@ class OptionsPage
      */
     public function inject_html(): void
     {
-        $config = OptionsServices::get('config', false);
+        $config = OptionsServices::get('config', false) ?? [];
 
         $html = '<div id="gm-admin-app" style="padding-right: 20px;">
 				<h1><img src="'.WPPERFORMANCE_DEAKTIVER_URI.'/admin-app/src/assets/media/deaktiver.png" />'.ucfirst(WPPERFORMANCE_DEAKTIVER).'</h1>';
