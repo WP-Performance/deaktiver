@@ -1,0 +1,24 @@
+{
+  "name": "gm-admin-panel",
+  "version": "0.0.1",
+  "description": "App for display admin panel settings",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env APP_ENV=development vite",
+    "build": "APP_ENV=production vite build"
+  },
+  "author": "Faramaz Patrick<info@goodmotion.fr>",
+  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "1.4.1",
+    "@vitejs/plugin-basic-ssl": "^1.0.2",
+    "browserslist": "^4.22.2",
+    "cross-env": "^7.0.3",
+    "lightningcss": "1.22.1",
+    "vite": "5.0.7"
+  },
+  "dependencies": {
+    "alpinejs": "^3.13.3"
+  }
+}

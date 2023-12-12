@@ -1,0 +1,38 @@
+{
+  "require": {
+    "wp-performance/presswind-assets": "dev-main"
+  },
+    "autoload": {
+        "psr-4": {
+        "Deaktiver\\": "src/"
+        }
+    },
+  "require-dev": {
+    "coenjacobs/mozart": "^0.7.1",
+    "laravel/pint": "^1.13"
+  },
+  "extra": {
+    "mozart": {
+      "dep_namespace": "Deaktiver\\Dependencies\\",
+      "dep_directory": "/src/Dependencies/",
+      "classmap_directory": "/src/",
+      "classmap_prefix": "DKTR_",
+      "packages": [
+        "wp-performance/presswind-assets"
+      ],
+      "excluded_packages": [
+      ],
+      "delete_vendor_directories": true
+    }
+  },
+  "scripts": {
+  "post-install-cmd": [
+    "\"vendor/bin/mozart\" compose",
+    "composer dump-autoload"
+  ],
+  "post-update-cmd": [
+    "\"vendor/bin/mozart\" compose",
+    "composer dump-autoload"
+  ]
+}
+}

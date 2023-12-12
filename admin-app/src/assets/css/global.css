@@ -1,0 +1,78 @@
+#gm-admin-app h1 {
+    display: flex;
+    align-items: center;
+    gap: 0.1rem;
+}
+
+#gm-admin-app h1 img {
+    width: 80px;
+}
+
+/** form elements **/
+.dkr_options > fieldset {
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.dkr_options .button {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.dkr_option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--dkr-bg);
+    border-radius: 5px;
+}
+
+form.dkr_disabled .dkr_option {
+    opacity: .5;
+}
+
+/** utilities **/
+
+@keyframes dkr_load {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.dkr_loader {
+    display: inline-flex;
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjIiIGQ9Ik0xMiAzYTkgOSAwIDEgMCA5IDkiLz48L3N2Zz4=');
+    background-size: 100%;
+    width: 24px;
+    height: 24px;
+    animation: dkr_load 1s linear infinite;
+}
+
+.dkr_message_success {
+    color: var(--dkr-success-dark);
+    padding: 1rem 0;
+    font-size: 1rem;
+}
+
+.dkr_message_error {
+    color: var(--dkr-danger);
+    padding: 1rem 0;
+    font-size: 1rem;
+}
+
+.dkr_message_info {
+    background: var(--dkr-warning);
+    padding: 1rem;
+    font-size: .8rem;
+    border-radius: 5px;
+    border: 1px solid var(--dkr-warning-dark);
+    font-weight: bold;
+}

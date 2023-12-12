@@ -1,0 +1,169 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Deaktiver\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-12 14:23+0000\n"
+"PO-Revision-Date: 2023-12-12 14:23+0000\n"
+"Last-Translator: Patrick Faramaz\n"
+"Language-Team: Français\n"
+"Language: fr_FR\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.6; wp-6.4.2\n"
+"X-Domain: wpperformance-deaktiver"
+
+#: config/options.php:45
+msgid "Comments"
+msgstr ""
+
+#: src/Deaktive/DeaktiveComments.php:120 src/Deaktive/DeaktiveComments.php:125
+#: src/Deaktive/DeaktiveFeed.php:40
+msgid "Comments are disabled."
+msgstr ""
+
+#. Name of the plugin
+msgid "Deaktiver"
+msgstr ""
+
+#: src/Options/OptionsPage.php:32
+msgid ""
+"Deaktiver is a plugin that allows you to disable unnecessary features of "
+"WordPress."
+msgstr ""
+
+#: src/Options/OptionsPage.php:76
+msgid "Default"
+msgstr ""
+
+#: config/options.php:46
+msgid "Disable comments"
+msgstr ""
+
+#: config/options.php:10
+msgid "Disable embed"
+msgstr ""
+
+#: config/options.php:6
+msgid "Disable emoji"
+msgstr ""
+
+#: config/options.php:14
+msgid "Disable feed"
+msgstr ""
+
+#: config/options.php:22
+msgid "Disable jQuery"
+msgstr ""
+
+#: config/options.php:26
+msgid "Disable jQuery Migrate"
+msgstr ""
+
+#. Description of the plugin
+msgid "Disable native features of WordPress that you don't need."
+msgstr ""
+
+#: config/options.php:50
+msgid "Disable REST User"
+msgstr ""
+
+#: config/options.php:38
+msgid "Disable rsd_link"
+msgstr ""
+
+#: config/options.php:42
+msgid "Disable short_link"
+msgstr ""
+
+#: config/options.php:30
+msgid "Disable version"
+msgstr ""
+
+#: config/options.php:34
+msgid "Disable wlwmanifest"
+msgstr ""
+
+#: config/options.php:18
+msgid "Disable XML-RPC"
+msgstr ""
+
+#: src/Options/OptionsPage.php:75
+msgid "Disabled"
+msgstr ""
+
+#: config/options.php:9
+msgid "Embed"
+msgstr ""
+
+#: config/options.php:5
+msgid "Emoji"
+msgstr ""
+
+#: src/Options/OptionsPage.php:50
+msgid "Error on save process"
+msgstr ""
+
+#. URI of the plugin
+msgid "false"
+msgstr ""
+
+#. Author of the plugin
+msgid "Faramaz patrick"
+msgstr ""
+
+#: config/options.php:13
+msgid "Feed"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://goodmotion.fr"
+msgstr ""
+
+#: config/options.php:21
+msgid "jQuery"
+msgstr ""
+
+#: config/options.php:25
+msgid "jQuery Migrate"
+msgstr ""
+
+#: config/options.php:49
+msgid "REST User"
+msgstr ""
+
+#: config/options.php:37
+msgid "Rsd link"
+msgstr ""
+
+#: src/Options/OptionsPage.php:46
+msgid "Save settings"
+msgstr ""
+
+#: src/Options/OptionsPage.php:49
+msgid "Saved successfully"
+msgstr ""
+
+#: config/options.php:41
+msgid "Short link"
+msgstr ""
+
+#: src/Options/OptionsPage.php:34
+msgid ""
+"The form is disabled because you use config file in your theme. You can edit "
+"the configuration file in your theme to add or remove features."
+msgstr ""
+
+#: config/options.php:29
+msgid "Version"
+msgstr ""
+
+#: config/options.php:33
+msgid "WLWmanifest"
+msgstr ""
+
+#: config/options.php:17
+msgid "XML-RPC"
+msgstr ""

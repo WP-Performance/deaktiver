@@ -1,0 +1,11 @@
+:root {
+ --dkr-bg: #fcfcfc;
+ --dkr-primary: #2271b1;
+ --dkr-primary-dark: #1c5a8a;
+ --dkr-success: #5cb85c;
+ --dkr-success-dark: #449d44;
+ --dkr-info: #5bc0de;
+ --dkr-warning: #f0ad4e;
+ --dkr-warning-dark: #ec9710;
+ --dkr-danger: #d9534f;
+}
