@@ -10,6 +10,7 @@ return [
     'jquery' => false,
     'jquery-migrate' => false,
     'version' => false,
+    'powered-by' => false,
     'wlwmanifest' => false,
     'rsd_link' => false,
     'short_link' => false,

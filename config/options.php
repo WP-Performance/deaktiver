@@ -29,6 +29,10 @@ return [
         'label' => __('Version', 'deaktiver'),
         'description' => __('Disable version', 'deaktiver'),
     ],
+    'powered-by' => [
+        'label' => __('Powered By', 'deaktiver'),
+        'description' => __('Disable powered By header', 'deaktiver'),
+    ],
     'wlwmanifest' => [
         'label' => __('WLWmanifest', 'deaktiver'),
         'description' => __('Disable wlwmanifest', 'deaktiver'),

@@ -16,7 +16,7 @@ class DeaktiveJquery extends DeaktiveBase
 
     public function disable_jquery(): void
     {
-        if (! is_admin() && ! is_user_logged_in()) {
+        if (! is_admin() && ! is_user_logged_in() && ! is_login()) {
             wp_deregister_script('jquery');
             wp_register_script('jquery', false);
         }
