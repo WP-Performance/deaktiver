@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Deaktiver\Deaktive;
+
 use Deaktiver\Deaktive\Base\DeaktiveBase;
 
 class DeaktivePoweredBy extends DeaktiveBase

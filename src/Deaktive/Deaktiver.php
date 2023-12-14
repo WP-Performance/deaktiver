@@ -39,6 +39,9 @@ class Deaktiver
 
             if ($value === true) {
                 $class_name = self::get_class_name($key);
+                if (! class_exists($class_name)) {
+                    continue;
+                }
                 self::$deaktiver[] = new $class_name();
             }
         }

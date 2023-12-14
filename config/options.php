@@ -45,6 +45,10 @@ return [
         'label' => __('Short link', 'deaktiver'),
         'description' => __('Disable short_link', 'deaktiver'),
     ],
+    'rest_link' => [
+        'label' => __('Rest link', 'deaktiver'),
+        'description' => __('Disable rest_link', 'deaktiver'),
+    ],
     'comments' => [
         'label' => __('Comments', 'deaktiver'),
         'description' => __('Disable comments', 'deaktiver'),
@@ -52,5 +56,13 @@ return [
     'rest_user' => [
         'label' => __('REST User', 'deaktiver'),
         'description' => __('Disable REST User', 'deaktiver'),
+    ],
+    'login_url' => [
+        'label' => __('Login URL', 'deaktiver'),
+        'description' => __('Login URL and name from current site', 'deaktiver'),
+    ],
+    'login_lang_selector' => [
+        'label' => __('Login Language Selector', 'deaktiver'),
+        'description' => __('Disable login language selector', 'deaktiver'),
     ],
 ];

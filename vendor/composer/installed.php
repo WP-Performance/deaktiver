@@ -5,7 +5,7 @@ return [
         'name' => '__root__',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '90cd4587ef7ce1d35a17a182cfb1fb8a1c0c0e97',
+        'reference' => '4ac51031d814f487507b28d1d5974e2b7d048a99',
         'type' => 'library',
         'install_path' => __DIR__.'/../../',
         'aliases' => [],
@@ -15,7 +15,7 @@ return [
         '__root__' => [
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '90cd4587ef7ce1d35a17a182cfb1fb8a1c0c0e97',
+            'reference' => '4ac51031d814f487507b28d1d5974e2b7d048a99',
             'type' => 'library',
             'install_path' => __DIR__.'/../../',
             'aliases' => [],

@@ -14,6 +14,9 @@ return [
     'wlwmanifest' => false,
     'rsd_link' => false,
     'short_link' => false,
+    'rest_link' => false,
     'comments' => false,
     'rest_user' => false,
+    'login_url' => false,
+    'login_lang_selector' => false,
 ];
