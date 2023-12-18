@@ -112,14 +112,14 @@ class PWVite
             // remove last slash
             $plugin_dir = PWHelpers::cleanPath($plugin_dir, false);
 
-            $_path_ = explode($content_dir, $plugin_dir.PWHelpers::cleanPath($this->path, false));
+            $_path_ = explode($content_dir, $plugin_dir.PWHelpers::cleanPath($this->path));
         } else {
             // get content dir name
             $content_dir = explode('/', WP_CONTENT_DIR);
             $content_dir = end($content_dir);
             // split path from content dir name
             $_path_ = explode($content_dir, get_stylesheet_directory()
-                                            .PWHelpers::cleanPath($this->path, false));
+                                            .PWHelpers::cleanPath($this->path));
         }
 
         return count($_path_) > 0 ? $content_dir.$_path_[1] : '';
