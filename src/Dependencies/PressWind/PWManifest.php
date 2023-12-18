@@ -1,18 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Deaktiver\Dependencies\PressWind;
+
+use Exception;
 
 class PWManifest
 {
     public static $vite_folder = '.vite';
-
-    /**
-     * check if vite version is 5 with .vite folder
-     */
-    private function hasDotVite($path): bool
-    {
-        return is_dir($path.'/'.self::$vite_folder);
-    }
 
     /**
      * @throws \Exception
@@ -66,8 +62,8 @@ class PWManifest
 
         try {
             $strJsonFileContents = file_get_contents($full_path.'manifest.json');
-        } catch (\Exception $e) {
-            throw new \Exception($e->getMessage());
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
         }
 
         return json_decode(str_replace(
@@ -75,30 +71,6 @@ class PWManifest
             '',
             $strJsonFileContents
         ));
-    }
-
-    /**
-     * get token name from file name
-     *
-     * @param  string  $key - key from manifest file
-     * @return string
-     */
-    private function get_token_name($key)
-    {
-        // model $key assets/main-legacy-fe2da1bc.js
-        $k = explode('-', $key);
-        $token = $key;
-        // ex: $k[1] | $k[2] = fe2da1bc.js
-        if (array_key_exists(1, $k)) {
-            // take key 1 or 2
-            $t = array_key_exists(2, $k) ? explode('.', $k[2]) : explode('.', $k[1]);
-            // ex: $kt[0] = fe2da1bc
-            if (array_key_exists(0, $t)) {
-                $token = $t[0];
-            }
-        }
-
-        return $token;
     }
 
     public function order_manifest($manifest)
@@ -154,6 +126,38 @@ class PWManifest
             // polyfill before legacy
             'ordered' => array_merge($cleaned, [$polyfill, $legacy]),
         ];
+    }
+
+    /**
+     * check if vite version is 5 with .vite folder
+     */
+    private function hasDotVite($path): bool
+    {
+        return is_dir($path.'/'.self::$vite_folder);
+    }
+
+    /**
+     * get token name from file name
+     *
+     * @param  string  $key - key from manifest file
+     * @return string
+     */
+    private function get_token_name($key)
+    {
+        // model $key assets/main-legacy-fe2da1bc.js
+        $k = explode('-', $key);
+        $token = $key;
+        // ex: $k[1] | $k[2] = fe2da1bc.js
+        if (array_key_exists(1, $k)) {
+            // take key 1 or 2
+            $t = array_key_exists(2, $k) ? explode('.', $k[2]) : explode('.', $k[1]);
+            // ex: $kt[0] = fe2da1bc
+            if (array_key_exists(0, $t)) {
+                $token = $t[0];
+            }
+        }
+
+        return $token;
     }
 
     /**

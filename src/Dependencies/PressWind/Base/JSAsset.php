@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Deaktiver\Dependencies\PressWind\Base;
 
 class JSAsset extends Asset

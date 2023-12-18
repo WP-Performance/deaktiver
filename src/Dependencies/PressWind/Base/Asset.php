@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Deaktiver\Dependencies\PressWind\Base;
 
 class Asset
@@ -65,24 +67,6 @@ class Asset
     }
 
     /**
-     * get version of file
-     */
-    protected function getVersion(): string
-    {
-        $dir = get_stylesheet_directory();
-        // determine path to file in server
-        $path = str_replace(get_stylesheet_directory_uri(), '', $this->src);
-        // get file path
-        $file = $dir.$path;
-        // if is dev localhost return time
-        if (str_contains($file, 'localhost')) {
-            return strtotime('now');
-        }
-
-        return $this->ver ?? filemtime($file);
-    }
-
-    /**
      * attach inline script to script
      */
     public function withInline(string $script, string $position = 'after'): void
@@ -103,10 +87,6 @@ class Asset
         add_action('wp_enqueue_scripts', $enqueue);
 
         return $this;
-    }
-
-    protected function enqueue(): void
-    {
     }
 
     /**
@@ -140,5 +120,27 @@ class Asset
             $this->enqueue();
         };
         add_action('login_enqueue_scripts', $enqueue);
+    }
+
+    /**
+     * get version of file
+     */
+    protected function getVersion(): string
+    {
+        $dir = get_stylesheet_directory();
+        // determine path to file in server
+        $path = str_replace(get_stylesheet_directory_uri(), '', $this->src);
+        // get file path
+        $file = $dir.$path;
+        // if is dev localhost return time
+        if (str_contains($file, 'localhost')) {
+            return strval(strtotime('now'));
+        }
+
+        return $this->ver ?? strval(filemtime($file));
+    }
+
+    protected function enqueue(): void
+    {
     }
 }

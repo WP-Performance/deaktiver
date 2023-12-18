@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Deaktiver\Dependencies\PressWind;
 
 use Deaktiver\Dependencies\PressWind\Base\CSSAsset;
@@ -10,17 +12,6 @@ use Deaktiver\Dependencies\PressWind\Base\JSAsset;
  */
 class PWAsset
 {
-    /**
-     * define if asset is css
-     */
-    protected static function is_css($src): bool
-    {
-        // extension is .css
-        $path = pathinfo($src);
-
-        return $path['extension'] === 'css';
-    }
-
     /**
      * Create new asset instance
      *
@@ -37,5 +28,16 @@ class PWAsset
         } catch (\Exception $e) {
             throw new \Exception($e->getMessage());
         }
+    }
+
+    /**
+     * define if asset is css
+     */
+    protected static function is_css($src): bool
+    {
+        // extension is .css
+        $path = pathinfo($src);
+
+        return $path['extension'] === 'css';
     }
 }
