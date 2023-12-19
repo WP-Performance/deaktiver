@@ -5,7 +5,7 @@ return [
         'name' => '__root__',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'fb47d2cdec1be4e0a3ed723bcf2e61468a021601',
+        'reference' => '6fb772b31f55c4502c80a70367bad78a2d76e68e',
         'type' => 'library',
         'install_path' => __DIR__.'/../../',
         'aliases' => [],
@@ -15,7 +15,7 @@ return [
         '__root__' => [
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'fb47d2cdec1be4e0a3ed723bcf2e61468a021601',
+            'reference' => '6fb772b31f55c4502c80a70367bad78a2d76e68e',
             'type' => 'library',
             'install_path' => __DIR__.'/../../',
             'aliases' => [],
@@ -24,7 +24,7 @@ return [
         'wp-performance/presswind-assets' => [
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'f3f394b7ac602fd36bb4a9ee71a84c4d977b9f77',
+            'reference' => '2e1660ac7b1b3035b32d29340579edaa124b6633',
             'type' => 'library',
             'install_path' => __DIR__.'/../wp-performance/presswind-assets',
             'aliases' => [

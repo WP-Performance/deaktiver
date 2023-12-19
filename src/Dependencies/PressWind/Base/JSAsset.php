@@ -125,9 +125,10 @@ class JSAsset extends Asset
             if (! str_contains($_handle, $handle)) {
                 return $tag;
             }
+
             $type = $this->is_module ? 'module' : 'nomodule';
 
-            return str_replace(' src', ' type="'.$type.'" crossorigin src', $tag);
+            return str_replace('<script ', '<script type="module" crossorigin ', $tag);
         }, 10, 3);
     }
 }
