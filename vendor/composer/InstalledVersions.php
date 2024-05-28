@@ -14,6 +14,9 @@ namespace Composer;
 
 use Composer\Autoload\ClassLoader;
 use Composer\Semver\VersionParser;
+use OutOfBoundsException;
+
+use function call_user_func_array;
 
 /**
  * This class is copied in every Composer installed project and available to all
@@ -63,7 +66,7 @@ class InstalledVersions
             return $packages[0];
         }
 
-        return array_keys(array_flip(\call_user_func_array('array_merge', $packages)));
+        return array_keys(array_flip(call_user_func_array('array_merge', $packages)));
     }
 
     /**
@@ -162,7 +165,7 @@ class InstalledVersions
             return implode(' || ', $ranges);
         }
 
-        throw new \OutOfBoundsException('Package "'.$packageName.'" is not installed');
+        throw new OutOfBoundsException('Package "' . $packageName . '" is not installed');
     }
 
     /**
@@ -183,7 +186,7 @@ class InstalledVersions
             return $installed['versions'][$packageName]['version'];
         }
 
-        throw new \OutOfBoundsException('Package "'.$packageName.'" is not installed');
+        throw new OutOfBoundsException('Package "' . $packageName . '" is not installed');
     }
 
     /**
@@ -204,7 +207,7 @@ class InstalledVersions
             return $installed['versions'][$packageName]['pretty_version'];
         }
 
-        throw new \OutOfBoundsException('Package "'.$packageName.'" is not installed');
+        throw new OutOfBoundsException('Package "' . $packageName . '" is not installed');
     }
 
     /**
@@ -225,7 +228,7 @@ class InstalledVersions
             return $installed['versions'][$packageName]['reference'];
         }
 
-        throw new \OutOfBoundsException('Package "'.$packageName.'" is not installed');
+        throw new OutOfBoundsException('Package "' . $packageName . '" is not installed');
     }
 
     /**
@@ -242,7 +245,7 @@ class InstalledVersions
             return isset($installed['versions'][$packageName]['install_path']) ? $installed['versions'][$packageName]['install_path'] : null;
         }
 
-        throw new \OutOfBoundsException('Package "'.$packageName.'" is not installed');
+        throw new OutOfBoundsException('Package "' . $packageName . '" is not installed');
     }
 
     /**
@@ -274,7 +277,7 @@ class InstalledVersions
             // only require the installed.php file if this file is loaded from its dumped location,
             // and not from its source location in the composer/composer package, see https://github.com/composer/composer/issues/9937
             if (substr(__DIR__, -8, 1) !== 'C') {
-                self::$installed = include __DIR__.'/installed.php';
+                self::$installed = include __DIR__ . '/installed.php';
             } else {
                 self::$installed = [];
             }
@@ -336,11 +339,11 @@ class InstalledVersions
             foreach (ClassLoader::getRegisteredLoaders() as $vendorDir => $loader) {
                 if (isset(self::$installedByVendor[$vendorDir])) {
                     $installed[] = self::$installedByVendor[$vendorDir];
-                } elseif (is_file($vendorDir.'/composer/installed.php')) {
+                } elseif (is_file($vendorDir . '/composer/installed.php')) {
                     /** @var array{root: array{name: string, pretty_version: string, version: string, reference: string|null, type: string, install_path: string, aliases: string[], dev: bool}, versions: array<string, array{pretty_version?: string, version?: string, reference?: string|null, type?: string, install_path?: string, aliases?: string[], dev_requirement: bool, replaced?: string[], provided?: string[]}>} $required */
-                    $required = require $vendorDir.'/composer/installed.php';
+                    $required = require $vendorDir . '/composer/installed.php';
                     $installed[] = self::$installedByVendor[$vendorDir] = $required;
-                    if (self::$installed === null && strtr($vendorDir.'/composer', '\\', '/') === strtr(__DIR__, '\\', '/')) {
+                    if (self::$installed === null && strtr($vendorDir . '/composer', '\\', '/') === strtr(__DIR__, '\\', '/')) {
                         self::$installed = $installed[count($installed) - 1];
                     }
                 }
@@ -352,7 +355,7 @@ class InstalledVersions
             // and not from its source location in the composer/composer package, see https://github.com/composer/composer/issues/9937
             if (substr(__DIR__, -8, 1) !== 'C') {
                 /** @var array{root: array{name: string, pretty_version: string, version: string, reference: string|null, type: string, install_path: string, aliases: string[], dev: bool}, versions: array<string, array{pretty_version?: string, version?: string, reference?: string|null, type?: string, install_path?: string, aliases?: string[], dev_requirement: bool, replaced?: string[], provided?: string[]}>} $required */
-                $required = require __DIR__.'/installed.php';
+                $required = require __DIR__ . '/installed.php';
                 self::$installed = $required;
             } else {
                 self::$installed = [];

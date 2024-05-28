@@ -67,19 +67,19 @@ class DeaktiveComments extends DeaktiveBase
     public function remove_link_admin_bar_for_network($wp_admin_bar): void
     {
         if (! function_exists('is_plugin_active_for_network')) {
-            require_once ABSPATH.'/wp-admin/includes/plugin.php';
+            require_once ABSPATH . '/wp-admin/includes/plugin.php';
         }
         if (is_plugin_active_for_network('deaktiver/index.php') &&
            is_user_logged_in()) {
 
             // all
             foreach ($wp_admin_bar->user->blogs as $blog) {
-                $wp_admin_bar->remove_menu('blog-'.$blog->userblog_id.'-c');
+                $wp_admin_bar->remove_menu('blog-' . $blog->userblog_id . '-c');
             }
         } else {
 
             // current
-            $wp_admin_bar->remove_menu('blog-'.get_current_blog_id().'-c');
+            $wp_admin_bar->remove_menu('blog-' . get_current_blog_id() . '-c');
         }
     }
 
@@ -155,7 +155,7 @@ class DeaktiveComments extends DeaktiveBase
 
             //blank comments template
             add_filter('comments_template', function () {
-                return dirname(__FILE__).'/index.php';
+                return dirname(__FILE__) . '/index.php';
             }, 20);
 
             //comments reply

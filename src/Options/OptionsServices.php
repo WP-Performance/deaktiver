@@ -22,7 +22,7 @@ class OptionsServices
 
     public static function use_config_file($key)
     {
-        $files_path = get_stylesheet_directory().'/config/deaktiver.php';
+        $files_path = get_stylesheet_directory() . '/config/deaktiver.php';
         if (file_exists($files_path)) {
             return include $files_path;
         }
@@ -30,8 +30,8 @@ class OptionsServices
 
     public static function get_options(): array
     {
-        if (file_exists(__DIR__.'/../../config/options.php')) {
-            return include __DIR__.'/../../config/options.php';
+        if (file_exists(__DIR__ . '/../../config/options.php')) {
+            return include __DIR__ . '/../../config/options.php';
         }
 
         return [];
@@ -51,18 +51,18 @@ class OptionsServices
         }
 
         // transient cache
-        $transient = get_transient(WPPERFORMANCE_DEAKTIVER.'_'.$key);
+        $transient = get_transient(WPPERFORMANCE_DEAKTIVER . '_' . $key);
         if ($transient && $cached) {
             return $transient;
         }
 
-        $data = get_option(WPPERFORMANCE_DEAKTIVER.'_'.$key);
+        $data = get_option(WPPERFORMANCE_DEAKTIVER . '_' . $key);
         if (! $data) {
             return null;
         }
 
         // set transient cache
-        set_transient(WPPERFORMANCE_DEAKTIVER.'_'.$key, $data, 60 * 60 * 24);
+        set_transient(WPPERFORMANCE_DEAKTIVER . '_' . $key, $data, 60 * 60 * 24);
 
         return $data;
     }
@@ -86,8 +86,8 @@ class OptionsServices
                     $data[$k] = filter_var(sanitize_text_field($value[$k]), FILTER_VALIDATE_BOOL);
                 }
             }
-            update_option(WPPERFORMANCE_DEAKTIVER.'_'.$key, $data);
-            delete_transient(WPPERFORMANCE_DEAKTIVER.'_'.$key);
+            update_option(WPPERFORMANCE_DEAKTIVER . '_' . $key, $data);
+            delete_transient(WPPERFORMANCE_DEAKTIVER . '_' . $key);
         }
     }
 

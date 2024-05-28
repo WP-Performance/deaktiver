@@ -25,19 +25,19 @@ use Deaktiver\Dependencies\PressWind\PWVite;
 use Deaktiver\Options\OptionsPage;
 use Deaktiver\Options\OptionsServices;
 
-require_once __DIR__.'/vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 if (! defined('WP_ENV')) {
     define('WP_ENV', 'development');
 }
 define('WPPERFORMANCE_DEAKTIVER', 'deaktiver');
-define('WPPERFORMANCE_DEAKTIVER_URI', plugin_dir_url(__DIR__).WPPERFORMANCE_DEAKTIVER);
+define('WPPERFORMANCE_DEAKTIVER_URI', plugin_dir_url(__DIR__) . WPPERFORMANCE_DEAKTIVER);
 
 /**
  * admin options page
  */
-new OptionsPage();
-new OptionsServices();
+new OptionsPage;
+new OptionsServices;
 
 /**
  * init all deaktive activated
@@ -57,7 +57,7 @@ if (isset($_GET['page']) && $_GET['page'] === WPPERFORMANCE_DEAKTIVER) {
     load_plugin_textdomain(
         WPPERFORMANCE_DEAKTIVER,
         false,
-        basename(dirname(__FILE__)).'/languages'
+        basename(dirname(__FILE__)) . '/languages'
     );
 }
 

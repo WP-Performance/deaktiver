@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return [
-    'Deaktiver\\' => [$baseDir.'/src'],
+    'Deaktiver\\' => [$baseDir . '/src'],
 ];

@@ -22,7 +22,7 @@ class Deaktiver
         $key = str_replace(['-', '_'], ' ', $key);
         $key = str_replace(' ', '', ucwords($key));
 
-        return 'Deaktiver\Deaktive\Deaktive'.ucfirst($key);
+        return 'Deaktiver\Deaktive\Deaktive' . ucfirst($key);
     }
 
     /**
@@ -42,7 +42,7 @@ class Deaktiver
                 if (! class_exists($class_name)) {
                     continue;
                 }
-                self::$deaktiver[] = new $class_name();
+                self::$deaktiver[] = new $class_name;
             }
         }
         self::disable();

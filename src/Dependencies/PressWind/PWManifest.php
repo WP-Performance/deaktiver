@@ -11,14 +11,14 @@ class PWManifest
     public static $vite_folder = '.vite';
 
     /**
-     * @throws \Exception
+     * @throws Exception
      */
     public static function get($path, $is_plugin = false, bool $withObject =
     false): array|object
     {
-        $self = new self();
+        $self = new self;
         // add trailing slash if not exist
-        $path = str_ends_with($path, '/') ? $path : $path.'/';
+        $path = str_ends_with($path, '/') ? $path : $path . '/';
         if ($withObject) {
             return [
                 'manifest' => $self->get_file($path, $is_plugin),
@@ -30,7 +30,7 @@ class PWManifest
     }
 
     /**
-     * @throws \Exception
+     * @throws Exception
      */
     public static function getOrdered($path, $is_plugin = false): array
     {
@@ -49,19 +49,19 @@ class PWManifest
      * @param  string  $path - path to manifest file from root theme default:
      * dist/manifest.json
      *
-     * @throws \Exception
+     * @throws Exception
      */
     public function get_file(string $path = '', bool $is_plugin = false): object
     {
-        $full_path = PWApp::get_working_path($is_plugin).'/'.$path.'dist/';
+        $full_path = PWApp::get_working_path($is_plugin) . '/' . $path . 'dist/';
 
         // if vite version 5
         if ($this->hasDotVite($full_path)) {
-            $full_path .= self::$vite_folder.'/';
+            $full_path .= self::$vite_folder . '/';
         }
 
         try {
-            $strJsonFileContents = file_get_contents($full_path.'manifest.json');
+            $strJsonFileContents = file_get_contents($full_path . 'manifest.json');
         } catch (Exception $e) {
             throw new Exception($e->getMessage());
         }
@@ -133,7 +133,7 @@ class PWManifest
      */
     private function hasDotVite($path): bool
     {
-        return is_dir($path.'/'.self::$vite_folder);
+        return is_dir($path . '/' . self::$vite_folder);
     }
 
     /**
