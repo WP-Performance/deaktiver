@@ -11,6 +11,7 @@
   ],
   "type": "wordpress-plugin",
   "require": {
+    "php": "^8.0",
     "wp-performance/presswind-assets": "dev-main"
   },
     "autoload": {
