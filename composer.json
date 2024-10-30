@@ -1,4 +1,15 @@
 {
+  "name": "wp-performance/deaktiver",
+  "description": "",
+  "keywords": ["wordpress", "plugin"],
+  "homepage": "https://github.com/WP-Performance/deaktiver",
+  "authors": [
+    {
+      "name": "Faramaz Patrick",
+      "homepage": "https://wp-performance.com"
+    }
+  ],
+  "type": "wordpress-plugin",
   "require": {
     "wp-performance/presswind-assets": "dev-main"
   },
